@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import Counter from './components/Counter';
 import Form from './components/Form';
+import { useState } from 'react';
+import Button from './components/Button';
 
 const Container = styled.View`
   flex: 1;
@@ -12,10 +14,17 @@ const Container = styled.View`
 `;
 
 export default function App() {
+  const [isVisible, setIsVisible] = useState(true);
+  
   return (
     <Container>
       {/* <Counter /> */}
-      <Form/>
+      {/* <Form/> */}
+      <Button
+        title={isVisible ? 'Hide': 'Show'}
+        onPress={() => setIsVisible(prev =>!prev)}  
+      />
+      {isVisible && <Form/>}
     </Container>
     
   );
