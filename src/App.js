@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import Counter from './components/Counter';
+import Form from './components/Form';
 
 const Container = styled.View`
   flex: 1;
@@ -13,7 +14,9 @@ const Container = styled.View`
 export default function App() {
   return (
     <Container>
-      <Counter />
+      {/* <Counter /> */}
+      <Form/>
     </Container>
+    
   );
 }
